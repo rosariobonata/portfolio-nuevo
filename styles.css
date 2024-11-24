@@ -1,3 +1,48 @@
+:root {
+    --rosa-claro: #ffb9de;
+    --rosa-oscuro: #f47fbd;
+    --verde-claro: #e8f8d8;
+    --verde-oscuro: #006400;
+}
+
+/*BARRA NAV*/
+.custom-navbar {
+    background-color: var(--rosa-oscuro);
+}
+
+.custom-navbar .navbar-brand {
+    color: var(--verde-claro);
+}
+
+.custom-navbar .navbar-brand:hover {
+    color: white; /* Para cambiar el color al pasar el mouse */
+    text-decoration: none; /* Quitar el subrayado */
+}
+
+/*FOOTER*/
+
+.custom-footer {
+    background-color: var(--rosa-oscuro);
+    color: var(--verde-claro);
+}
+
+.custom-footer p {
+    margin: 0;
+    color: var(--verde-claro);
+}
+
+.custom-footer a {
+    color: var(--verde-claro);
+    text-decoration: none;
+}
+
+.custom-footer a:hover {
+    color: white; /* Cambia a blanco al pasar el mouse */
+    text-decoration: underline; /* Añade subrayado al pasar el mouse */
+}
+
+/*PAGES*/
+
 .dispo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -13,12 +58,268 @@
     width: 300px;
     height: auto;
     padding: 1%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .fotolaptop {
     width: 350px;
     height: auto;
     padding: 1%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre las imágenes */
+.fotosize:hover, .fotolaptop:hover {
+    transform: scale(1.1); /* Hace que la imagen se agrande */
+    filter: saturate(150%); /* Aumenta la saturación en un 150% */
+}
+
+/*FONDO*/
+
+body {
+    background-color: var(--verde-claro);
+}
+
+/*BOTONES*/
+
+.custom-btn {
+    background-color: var(--rosa-claro);
+    color: var(--rosa-oscuro); /* Color del texto */
+    font-weight: bold;
+    border: none; /* Sin borde */
+    transition: background-color 0.3s, transform 0.2s; /* Animaciones suaves */
+}
+
+.custom-btn:hover {
+    background-color: var(--rosa-oscuro); /* Color más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+    color: var(--verde-claro); /* Mantener texto blanco */
+}
+
+.custom-btn:focus {
+    outline: none; /* Quitar borde al enfocarse */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añadir sombra */
+}
+
+.icon-link {
+    color: var(--verde-oscuro); /* Verde oscuro para las letras */
+    text-decoration: none; /* Quitar subrayado */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 20px; /* Margen para que no quede pegado */
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon-link:hover {
+    color: var(--rosa-oscuro); /* Verde más oscuro en hover */
 }
 
 
+/* ===== CONTACT =====*/
+.contact__container {
+    row-gap: 2rem;
+}
+
+.contact__subtitle {
+    font-size: black;
+    color: black;
+}
+
+.contact__text {
+    display: inline-block;
+    margin-bottom: var(--mb-2);
+}
+
+.contact__inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+}
+
+.contact__input {
+    width: 100%;
+    padding: 0.8rem;
+    outline: none;
+    border: 1.5px solid black;
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-4);
+    border-radius: 2rem;
+}
+
+.contact__button {
+    display: block;
+    margin: 0 auto;
+    color:black;
+    border: none;
+    width: 126px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+}
+  
+.contact__button:hover {
+    transform: scale(1.05);
+}
+  
+.contact__button:active {
+    transform: translate(2px);
+}
+
+.contact {
+    background-color: var(--verde-claro); /* Fondo verde claro */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Hacer el formulario más pequeño */
+    margin: 0 auto; /* Centrar el formulario */
+}
+  
+.contact__form {
+    background-color: white; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.contact__title,
+.contact__subtitle {
+    color: var(--verde-oscuro); /* Letras verde oscuro */
+    text-align: center;
+}
+  
+.contact__inputs input,
+.contact__input,
+.contact__button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--verde-oscuro);
+    border-radius: 4px;
+}
+  
+.contact__input {
+    background-color: #fff; /* Fondo blanco para los campos de entrada */
+}
+  
+.contact__button {
+    background-color: var(--verde-oscuro); /* Fondo verde oscuro para el botón */
+    color: white; /* Texto blanco */
+    border: none;
+    cursor: pointer;
+}
+  
+.contact__button:hover {
+    background-color: var(--rosa-claro); /* Verde más oscuro al pasar el mouse */
+    color: var(--verde-oscuro);
+}
+  
+.contact__info {
+    margin-top: 20px;
+}
+  
+.contact__text {
+    color: var(--verde-oscuro); /* Texto verde oscuro */
+}
+
+/*CV*/
+.disposicioncv-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre columnas */
+    margin: 20px; /* Espacio externo para que no quede pegado al borde */
+}
+  
+.disposicioncv {
+    padding: 20px;
+    border: 1px solid #ccc; /* Opcional, para ver el contorno */
+}
+  
+.disposicioncv h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.disposicioncv p {
+    font-weight: bold;
+}
+
+.disposicioncv ul {
+    margin: 2%;
+}
+  
+.disposicioncv li {
+    margin-bottom: 5px;
+}
+  
+.disposicioncv p {
+    margin: 0;
+}
+
+/*SOBRE MI*/
+.about {
+    display: flex;
+}
+
+.imgperfil {
+    width: 400px;
+    height: auto;
+    padding-left: 20%;
+    padding-right: 10%;
+    padding-top: 10%;
+}
+
+.tituloabout {
+    text-align: center;
+    color: var(--rosa-oscuro);
+    margin-top: 0%;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+
+.parrafo {
+    font-family: Arial, sans-serif; /* Fuente más limpia y moderna */
+    line-height: 1.6; /* Mejor legibilidad */
+    margin: 20px auto; /* Centra el bloque con margen superior e inferior */
+    padding: 20px; /* Espaciado interno */
+    max-width: 800px; /* Limita el ancho del bloque para una mejor presentación */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+  
+.parrafo p {
+    font-size: 1.1rem; /* Tamaño de fuente un poco mayor */
+    color: var(--verde-oscuro); /* Color de texto oscuro para un buen contraste */
+    margin-bottom: 16px; /* Espacio entre los párrafos */
+}
+  
+/*trabajos*/
+
+.botoncitos {
+    display: flex;
+    flex-wrap: wrap;  /* Permite que los botones se ajusten a varias filas si es necesario */
+    justify-content: space-around;  /* Espaciado equitativo entre los botones */
+    gap: 10px;  /* Añade un espacio de 10px entre cada botón */
+    margin: 20px;  /* Margen alrededor de los botones */
+}
+  
+.botoncitos a {
+    background-color: #f47fbd;  /* Puedes ajustar este color según lo desees */
+    color: #006400;  /* Color de las letras */
+    padding: 10px 20px;  /* Añade espacio alrededor del texto dentro de los botones */
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;  /* Bordes redondeados */
+    font-size: 16px;  /* Tamaño de la fuente */
+    transition: background-color 0.3s ease;
+}
+  
+.botoncitos a:hover {
+    background-color: var(--rosa-claro);  /* Color de fondo al pasar el mouse */
+    color: #006400;  /* Mantén el color de la letra */
+}
+
+.textoindex {
+    margin-left: 3%;
+}
